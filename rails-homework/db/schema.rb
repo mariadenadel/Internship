@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 2021_12_15_131353) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "last_name"
-    t.integer "age"
-    t.string "email"
+    t.integer "age", default: 1, null: false
+    t.string "email", default: "your@email.com", null: false
   end
 
   create_table "physicians", force: :cascade do |t|
@@ -49,8 +49,8 @@ ActiveRecord::Schema.define(version: 2021_12_15_131353) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "last_name"
-    t.string "phone_number"
-    t.string "level"
+    t.string "phone_number", default: "+380931234567", null: false
+    t.string "level", default: "junior", null: false
   end
 
 end
