@@ -1,2 +1,8 @@
-<h2><%= @physician.first_name %></h2>
-<h2><%= @physician.last_name %></h2>
+<div class="container">
+  <span><%= @physician.first_name  %></span>
+  <span><%= @physician.last_name  %></span>
+  <div><%= @physician.phone_number %></div>
+  <div><%= @physician.level %></div>
+  <button><%= link_to "Edit", edit_physician_path(@physician) %></button>
+  <button><%= link_to "Delete", physician_path(@physician), method: :delete, data: { confirm: "Are you sure?" } %></button>
+</div>

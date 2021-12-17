@@ -1,0 +1,11 @@
+<%= form_with model: @physician do |form| %>
+  <%= form.label :first_name, "First name"%>
+  <%= form.text_field :first_name %>
+  <%= form.label :last_name, "Last name"%>
+  <%= form.text_field :last_name %>
+  <%= form.label :phone_number, "Phoen Number"%>
+  <%= form.text_field :phone_number %>
+  <%= form.label :level, "Level"%>
+  <%= form.select :level, { "Level" => [ ["junior"], ["middle"], ["senior"] ] }, selected: "Junior" %>
+  <%= form.submit "Add" %>
+<% end %>

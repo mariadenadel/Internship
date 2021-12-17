@@ -1,18 +1,21 @@
+<div class="container">
 <h1>All Physicians</h1>
 <table class="table table-striped">
   <tr>
+    <th>ID</th>
     <th>First Name</th>
     <th>Last Name</th>
     <th>Phone Number</th>
     <th>Level</th>
   </tr>
-
   <% @physicians.each do |physician| %>
     <tr>
-      <td> <%= physician.first_name%> </td>
-      <td> <%= physician.last_name%> </td>
-      <td> <%= physician.phone_number%> </td>
-      <td> <%= physician.level%> </td>
+      <td> <%= physician.id %> </td>
+      <td> <%= physician.first_name %> </td>
+      <td> <%= physician.last_name %> </td>
+      <td> <%= physician.phone_number %> </td>
+      <td> <%= physician.level %> </td>
     </tr>
   <% end %>
 </table>
+<div class="container">
