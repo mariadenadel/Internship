@@ -2,7 +2,6 @@ class Patient < ApplicationRecord
   has_many :appointments
   has_many :physicians, through: :appointments
   has_many :diagnosis_items
-  has_many :physicians, through: :diagnosis_items
 
   validates_each :first_name, :last_name do |record, attr, value|
     record.errors.add(attr, 'must start with upper case') if value =~ /\A[[:lower:]]/
