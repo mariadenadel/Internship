@@ -1,0 +1,8 @@
+<div class="container">
+  <span><%= @patient.first_name  %></span>
+  <span><%= @patient.last_name  %></span>
+  <div><%= @patient.email %></div>
+  <div><%= @patient.age %></div>
+  <button><%= link_to "Edit", edit_patient_path(@patient) %></button>
+  <button><%= link_to "Delete", patient_path(@patient), method: :delete, data: { confirm: "Are you sure?" } %></button>
+</div>
