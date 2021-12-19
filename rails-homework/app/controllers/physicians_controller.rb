@@ -44,5 +44,4 @@ class PhysiciansController < ApplicationController
   def physician_params
     params.require(:physician).permit(:first_name, :last_name, :phone_number, :level)
   end
-
 end

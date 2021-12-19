@@ -6,6 +6,6 @@
   <%= form.label :phone_number, "Phoen Number"%>
   <%= form.text_field :phone_number %>
   <%= form.label :level, "Level"%>
-  <%= form.select :level, { "Level" => [ ["junior"], ["middle"], ["senior"] ] }, selected: "Junior" %>
+  <%= form.select :level, [ ["junior"], ["middle"], ["senior"] ], selected: "Junior" %>
   <%= form.submit "Add" %>
 <% end %>
