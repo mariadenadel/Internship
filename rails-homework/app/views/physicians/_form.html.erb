@@ -1,11 +1,21 @@
 <%= form_with model: @physician do |form| %>
-  <%= form.label :first_name, "First name"%>
-  <%= form.text_field :first_name %>
-  <%= form.label :last_name, "Last name"%>
-  <%= form.text_field :last_name %>
-  <%= form.label :phone_number, "Phone Number"%>
-  <%= form.text_field :phone_number %>
-  <%= form.label :level, "Level"%>
-  <%= form.select :level, [ ["junior"], ["middle"], ["senior"] ], selected: "Junior" %>
-  <%= form.submit "Add" %>
+  <p>
+    <%= form.label :first_name, "First name"%>
+    <%= form.text_field :first_name, {class: "form-control"} %>
+  </p>
+  <p>
+    <%= form.label :last_name, "Last name"%>
+    <%= form.text_field :last_name, {class: "form-control"} %>
+  </p>
+  <p>
+    <%= form.label :phone_number, "Phone Number"%>
+    <%= form.text_field :phone_number, {class: "form-control"} %>
+  </p>
+  <p>
+    <%= form.label :level, "Level"%>
+    <%= form.select :level, options_for_select([["junior"], ["middle"], ["senior"]]), {}, class: "form-control" %>
+  </p>
+  <p>
+    <%= form.submit "Add Physician", class: "btn btn-success" %>
+  </p>
 <% end %>
