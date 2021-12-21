@@ -4,71 +4,81 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <title>HTML Homework</title>
 </head>
 <body>
   <header>
     <nav>
       <ul>
-        <li><img src="img/png-file.png" alt="Logo png" width="30" height="30"></li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Features</a></li>
-        <li><a href="#">Process</a></li>
-        <li><a href="#">Discover</a></li>
-        <li><a href="#">Feedback</a></li>
-        <li><input type="search"></li>
-        <li><a href="#">Log In</a></li>
+        <li><img src="img/png-file.png" alt="Logo png" width="30" height="30" id="logo"></li>
+        <div>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Process</a></li>
+          <li><a href="#">Discover</a></li>
+          <li><a href="#">Feedback</a></li>
+        </div>
+        <div>
+          <li><input type="search"></li>
+          <li><button>Log In</button></li>
+        </div>
       </ul>
     </nav>
   </header>
   <main>
-    <article>
-      <h2>We help you find the best solution</h2>
-      <p>Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum.
-        Est audiam animal molestiae te. Ex duo eripuit mentitum.</p>
-      <button>Start free trial</button>
-      <img src="img/window.jpeg" alt="window" width="400" height="300">
+    <article id="first-article">
+      <div id ="first-section">
+        <h2>We help you find the best solution</h2>
+        <p>Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum.
+          Est audiam animal molestiae te. Ex duo eripuit mentitum.</p>
+        <button>Start free trial</button>
+      </div>
+      <img src="img/window.jpeg" alt="window" width="600" height="400">
     </article>
-    <article>
-      <h3>We offer a complete range of features</h3>
-      <ul>
-        <li>
+    <article id="second-article">
+      <h3 id="second-article-title">We offer a complete range of features</h3>
+      <div class="wrapper">
+        <div class="box">
           <img src="img/photo_2021-12-20 13.24.15.jpeg" alt="cart">
-          <p>Store Integration</p>
+          <h4>Store Integration</h4>
           <p>Eos tota dicunt democritum no. Has natum gubergren ne. Est viris soleat sadipscing cu.
             Legere epicuri insolens eu nec, dicit virtute urbanitas id nam, qui in habeo semper eligendi.</p>
-        </li>
-        <li>
+        </div>
+        <div class="box">
           <img src="img/photo_2021-12-20 13.24.16.jpeg" alt="shield">
-          <p>Data Protection</p>
+          <h4>Data Protection</h4>
           <p>Ne nam phaedrum consequat, adhuc aliquid ea pri, eum eligendi incorrupte referrentur in.
             Vix ad senserit salutandi argumentum. Ei eam definiebas reformidans, exerci persecuti no ius.</p>
-        </li>
-        <li>
+        </div>
+        <div class="box">
           <img src="img/photo_2021-12-20 13.24.17.jpeg" alt="label">
-          <p>Invoice Generator</p>
+          <h4>Invoice Generator</h4>
           <p>Assum suavitate ea vel, vero erat doming cu cum. Zril ornatus sea cu. Pro ex integre pertinax.
             Cu cum harum paulo legendos, mei et quod enim mnesarchum, habeo affert laoreet sea ei.</p>
-        </li>
-        <li>
+        </div>
+        <div class="box">
           <img src="img/photo_2021-12-20 13.24.18.jpeg" alt="arrow">
-          <p>Auto Responder</p>
+          <h4>Auto Responder</h4>
           <p>Assum suavitate ea vel, vero erat doming cu cum. Zril ornatus sea cu. Pro ex integre pertinax.
             Cu cum harum paulo legendos, mei et quod enim mnesarchum, habeo affert laoreet sea ei.</p>
-        </li>
-        <li>
+        </div>
+        <div class="box">
           <img src="img/photo_2021-12-20 13.25.56.jpeg" alt="social">
-          <p>Social Plugins</p>
+          <h4>Social Plugins</h4>
           <p>Eos tota dicunt democritum no. Has natum gubergren ne. Est viris soleat sadipscing cu.
             Legere epicuri insolens eu nec, dicit virtute urbanitas id nam, qui in habeo semper eligendi.</p>
-        </li>
-        <li>
+        </div>
+        <div class="box">
           <img src="img/photo_2021-12-20 13.24.19.jpeg" alt="data base">
-          <p>Data Backup</p>
+          <h4>Data Backup</h4>
           <p>Ne nam phaedrum consequat, adhuc aliquid ea pri, eum eligendi incorrupte referrentur in.
             Vix ad senserit salutandi argumentum. Ei eam definiebas reformidans, exerci persecuti no ius.</p>
-        </li>
-      </ul>
+        </div>
+      </div>
     </article>
   </main>
 </body>
