@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 50px 170px;
+}
+
+p {
+  font-size: 1.3rem;
+}
+
+li {
+  font-size: 1.5rem;
+}
+
+html {
+  font-family: 'Mulish', sans-serif;
+  --main-color: #3C64B1;
+  font-size: 10px;
+}
+
+h2 {
+  font-size: 5rem;
+}
+
+h3 {
+  font-size: 4rem;
+  margin-top: 60px;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+}
+
+li {
+  display: inline-block;
+  width: 100px;
+}
+
+a {
+  display: flex;
+  color: black;
+  text-decoration: none;
+}
+
+nav ul li a:hover{
+  color: var(--main-color);
+}
+
+button {
+  background-color: var(--main-color);
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: none;
+}
+
+button:hover {
+  background-color: #0f409b;
+}
+
+.search-button {
+  display: contents;
+}
+
+.first-article {
+	display: flex;
+	align-content: space-around;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.first-section {
+	display: flex;
+	flex-direction: column;
+  justify-content: space-around;
+  align-items: baseline;
+  margin-top: 60px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px;
+  row-gap: 1em;
+  margin-top: 60px;
+}
+
+article div div img {
+  width: 30px;
+  height: 30px;
+}
+
+.base-pic {
+  width: 450px;
+  height: 300px;
+}
+
+.box {
+  text-align: center;
+}
+
+.second-article {
+  text-align: center;
+}
+
+.message-picture {
+  position: fixed;
+  bottom: 15%;
+  right: 10px;
+  height: 70px;
+  width: 70px;
+  background-color: #02B8F7;;
+  border-radius: 50%;
+}
+
+.last-article {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 60px;
+}
+
+footer {
+  background-color: #373F41;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  margin-top: 60px;
+}
+.big-wrapper {
+  display: flex;
+  margin-top: 90px;
+}
+
+.wrapper-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 10px;
+  row-gap: 1em;
+}
+
+#search {
+  position: relative;
+}
+
+#search::before {
+  position: absolute;
+  content: "\1F50D";
+  top: 5px;
+  left: 5px;
+  height: 15px;
+  transform: translateY(-50%);
+}
+
+.message-picture a svg {
+  position: absolute;
+  top: 54%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+}
+
+#last-paragraph {
+  margin: 30px 0;
+}
