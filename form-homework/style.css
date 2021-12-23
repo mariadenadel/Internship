@@ -17,21 +17,27 @@ html {
 
 .form-title {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .buttons {
   display: flex;
+  width: 150px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .reset-button {
   border-radius: 10%;
+  height: 30px;
 }
 
 .confirm-button {
   background: #6989FE;
-  padding: 7px;
+  padding: 0 15px;
   border: none;
+  border-radius: 10%;
+  height: 30px;
 }
 
 .main-form {
@@ -46,4 +52,36 @@ textarea {
 .profile {
   display: flex;
   flex-direction: column;
+}
+
+.user-info {
+  margin: 50px;
+}
+
+input {
+  margin: 10px 0;
+}
+
+fieldset {
+  padding: 10px 15px;
+}
+
+.profile {
+  margin: 50px;
+}
+
+label {
+  margin: 10px 0;
+}
+
+input {
+  outline: none;
+}
+
+input:focus:invalid {
+  border: 2px solid red;
+}
+
+input:valid {
+  border: 2px solid green;
 }
