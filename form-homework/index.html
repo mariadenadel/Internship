@@ -111,4 +111,13 @@
     </form>
   </div>
 </body>
+<script>
+
+  document.querySelector("form").addEventListener("submit", function (event) {
+    event.preventDefault()
+    let array = [...document.querySelector("form").elements]
+    array.map((input) => console.log(input.value))
+  });
+
+</script>
 </html>
