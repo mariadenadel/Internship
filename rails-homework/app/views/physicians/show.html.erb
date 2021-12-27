@@ -1,8 +1,16 @@
-<div class="container">
-  <span><%= @physician.first_name  %></span>
-  <span><%= @physician.last_name  %></span>
-  <div><%= @physician.phone_number %></div>
-  <div><%= @physician.level %></div>
-  <button><%= link_to "Edit", edit_physician_path(@physician) %></button>
-  <button><%= link_to "Delete", physician_path(@physician), method: :delete, data: { confirm: "Are you sure?" } %></button>
+<div class="container m-5">
+  <div class="card border-dark mb-3" style="max-width: 18rem;">
+    <div class="card-header">Physician №<%= @physician.id %></div>
+    <div class="card-body text-dark">
+      <h5 class="card-title"> <%= @physician.full_name %> </h5>
+      <p class="card-text">Phone number: <%= @physician.phone_number %> </p>
+      <p class="card-text">Level: <%= @physician.level %></p>
+    </div>
+    <div class="card-footer bg-transparent border-dark">
+      <%= link_to "Edit", edit_physician_path(@physician), :class => "btn btn-outline-primary" %>
+      <%= link_to "Delete", physician_path(@physician), method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-outline-danger" %>
+    </div>
+  </div>
+  <%= link_to " < Back", :back %> <br>
+  <%= link_to " < Back to Physicians", physicians_path() %>
 </div>

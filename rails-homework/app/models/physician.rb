@@ -12,4 +12,8 @@ class Physician < ApplicationRecord
   validates :last_name, presence: true, length: { minimum: 2, too_short: "%{count} characters is the minumum allowed" }
   validates :phone_number, presence: true, format: { with: /\A\+380[\d]{9}\z/, message: "enter valid UA phone number" }
   validates :level, presence: true, inclusion: { in: %w(junior middle senior) }
+
+  def full_name
+    self.first_name + " " + self.last_name
+  end
 end

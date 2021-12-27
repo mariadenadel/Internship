@@ -36,7 +36,7 @@ class PhysiciansController < ApplicationController
   def destroy
     @physician = Physician.find(params[:id])
     @physician.destroy
-    redirect_to root_path
+    redirect_to "/physicians"
   end
 
   private
