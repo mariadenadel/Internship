@@ -12,4 +12,8 @@ class Patient < ApplicationRecord
   validates :last_name, presence: true, length: { minimum: 2, too_short: "%{count} characters is the minumum allowed" }
   validates :age, presence: true, numericality: { only_integer: true, in: 1..130 }
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP, message: "enter valid email" }
+
+  def full_name
+    self.first_name + " " + self.last_name
+  end
 end
