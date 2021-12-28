@@ -1,0 +1,21 @@
+<%= form_for @appointment do |form| %>
+  <p>
+    <%= form.label :appointment_date, "Appointment Date" %>
+    <%= form.datetime_field :appointment_date, class: "form-control" %>
+  </p>
+  <p>
+    <%= form.label :appointment_patient_id, "Patient" %>
+    <%= form.collection_select :patient_id, Patient.all, :id, :full_name, { prompt: true }, { class: "form-control" }  %>
+  </p>
+  <p>
+    <%= form.label :appointment_physician_id, "Physician" %>
+    <%= form.collection_select :physician_id, Physician.all, :id, :full_name, { prompt: true }, { class: "form-control" } %>
+  </p>
+
+  <p>
+    <%= form.submit "Add", class: "btn btn-success" %>
+  </p>
+  <p>
+    <%= link_to " < Back", :back %>
+  </p>
+<% end %>
