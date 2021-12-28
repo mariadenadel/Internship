@@ -20,7 +20,7 @@
     <% @appointments.each do |appointment| %>
       <tr>
         <td> <%= link_to appointment.id, appointment_path(appointment.id) %> </td>
-        <td> <%= appointment.appointment_date %> </td>
+        <td> <%= (appointment.appointment_date).strftime("%d %B %Y %H:%M") %> </td>
         <td> <%= appointment.patient.full_name %> </td>
         <td> <%= appointment.physician.full_name %> </td>
         <td>
