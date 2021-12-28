@@ -11,9 +11,8 @@
     <%= form.label :appointment_physician_id, "Physician" %>
     <%= form.collection_select :physician_id, Physician.all, :id, :full_name, { prompt: true }, { class: "form-control" } %>
   </p>
-
   <p>
-    <%= form.submit "Add", class: "btn btn-success" %>
+    <%= form.submit "Save", class: "btn btn-success" %>
   </p>
   <p>
     <%= link_to " < Back", :back %>
