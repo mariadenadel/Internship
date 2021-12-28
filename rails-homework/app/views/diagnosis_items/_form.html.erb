@@ -1,0 +1,21 @@
+<%= form_for @diagnosis_item do |form| %>
+  <p>
+    <%= form.label :content, "Content" %>
+    <%= form.text_area :content, class: "form-control" %>
+  </p>
+  <p>
+    <%= form.label :diagnosis_item_patient_id, "Patient" %>
+    <%= form.collection_select :patient_id, Patient.all, :id, :full_name, { prompt: true }, { class: "form-control" }  %>
+  </p>
+  <p>
+    <%= form.label :diagnosis_item_physician_id, "Physician" %>
+    <%= form.collection_select :physician_id, Physician.all, :id, :full_name, { prompt: true }, { class: "form-control" } %>
+  </p>
+
+  <p>
+    <%= form.submit "Add", class: "btn btn-success" %>
+  </p>
+  <p>
+    <%= link_to " < Back", :back %>
+  </p>
+<% end %>
