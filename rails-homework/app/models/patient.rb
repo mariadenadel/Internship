@@ -14,6 +14,6 @@ class Patient < ApplicationRecord
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP, message: "enter valid email" }
 
   def full_name
-    self.first_name + " " + self.last_name
+    "#{first_name} #{last_name}"
   end
 end
