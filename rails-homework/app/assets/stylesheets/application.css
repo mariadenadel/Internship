@@ -13,7 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-.custom-cart {
-  max-width: 18rem;
-}
