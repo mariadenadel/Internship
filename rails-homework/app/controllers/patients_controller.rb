@@ -14,7 +14,7 @@ class PatientsController < ApplicationController
   def create
     @patient = Patient.new(patient_params)
     if @patient.save
-      redirect_to @patient
+      redirect_to patient_path(@patient)
     else
       render :new
     end
@@ -27,7 +27,7 @@ class PatientsController < ApplicationController
   def update
     @patient = Patient.find(params[:id])
     if @patient.update(patient_params)
-      redirect_to @patient
+      redirect_to patient_path(@patient)
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class PatientsController < ApplicationController
   def destroy
     @patient = Patient.find(params[:id])
     @patient.destroy
-    redirect_to "/patients"
+    redirect_to patients_path
   end
 
   private
