@@ -5,11 +5,11 @@
   </p>
   <p>
     <%= form.label :appointment_patient_id, "Patient" %>
-    <%= form.collection_select :patient_id, Patient.all, :id, :full_name, { prompt: true }, { class: "form-control" }  %>
+    <%= form.collection_select :patient_id, @patients, :id, :full_name, { prompt: true }, { class: "form-control" }  %>
   </p>
   <p>
     <%= form.label :appointment_physician_id, "Physician" %>
-    <%= form.collection_select :physician_id, Physician.all, :id, :full_name, { prompt: true }, { class: "form-control" } %>
+    <%= form.collection_select :physician_id, @physicians, :id, :full_name, { prompt: true }, { class: "form-control" } %>
   </p>
   <p>
     <%= form.submit "Save", class: "btn btn-success" %>
