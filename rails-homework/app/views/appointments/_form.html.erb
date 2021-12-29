@@ -1,19 +1,9 @@
-<%= form_for @appointment do |form| %>
-  <p>
-    <%= form.label :appointment_date, "Appointment Date" %>
-    <%= form.datetime_field :appointment_date, class: "form-control" %>
-  </p>
-  <p>
-    <%= form.label :appointment_patient_id, "Patient" %>
-    <%= form.collection_select :patient_id, @patients, :id, :full_name, { prompt: true }, { class: "form-control" }  %>
-  </p>
-  <p>
-    <%= form.label :appointment_physician_id, "Physician" %>
-    <%= form.collection_select :physician_id, @physicians, :id, :full_name, { prompt: true }, { class: "form-control" } %>
-  </p>
-  <p>
-    <%= form.submit "Save", class: "btn btn-success" %>
-  </p>
+<%= simple_form_for @appointment do |form| %>
+  <%= form.input :appointment_date, as: :datetime %>
+  <%= form.association :patient, collection: @patients, label_method: :full_name, value_method: :id,label: "Patient", include_blank: false %>
+  <%= form.association :physician, collection: @physicians, label_method: :full_name, value_method: :id,label: "Physician", include_blank: false %>
+  <br>
+  <%= form.button :submit, class: "btn btn-success" %>
   <p>
     <%= link_to "< Back", :back %>
   </p>
