@@ -13,7 +13,7 @@
   </p>
   <p>
     <%= form.label :level, "Level"%>
-    <%= form.select :level, options_for_select([["junior"], ["middle"], ["senior"]]), {}, class: "form-control" %>
+    <%= form.select :level, options_for_select(Physician::LEVELS), {}, class: "form-control" %>
   </p>
   <p>
     <%= form.submit "Add", class: "btn btn-success" %>
