@@ -2,7 +2,6 @@ class Patient < ApplicationRecord
   has_many :appointments
   has_many :physicians, through: :appointments
   has_many :diagnosis_items
-  has_many :physicians, through: :diagnosis_items
 
   validates_each :first_name, :last_name do |record, attr, value|
     record.errors.add(attr, 'must start with upper case') if value =~ /\A[[:lower:]]/
@@ -14,6 +13,6 @@ class Patient < ApplicationRecord
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP, message: "enter valid email" }
 
   def full_name
-    self.first_name + " " + self.last_name
+    "#{first_name} #{last_name}"
   end
 end

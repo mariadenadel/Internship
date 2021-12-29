@@ -14,7 +14,7 @@ class PhysiciansController < ApplicationController
   def create
     @physician = Physician.new(physician_params)
     if @physician.save
-      redirect_to @physician
+      redirect_to physician_path(@physician)
     else
       render :new
     end
@@ -27,7 +27,7 @@ class PhysiciansController < ApplicationController
   def update
     @physician = Physician.find(params[:id])
     if @physician.update(physician_params)
-      redirect_to @physician
+      redirect_to physician_path(@physician)
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class PhysiciansController < ApplicationController
   def destroy
     @physician = Physician.find(params[:id])
     @physician.destroy
-    redirect_to "/physicians"
+    redirect_to physicians_path
   end
 
   private
