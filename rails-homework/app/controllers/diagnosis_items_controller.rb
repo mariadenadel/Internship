@@ -1,4 +1,6 @@
 class DiagnosisItemsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @diagnosis_items = DiagnosisItem.all
   end

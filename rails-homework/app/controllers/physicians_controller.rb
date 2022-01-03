@@ -1,4 +1,6 @@
 class PhysiciansController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @physicians = Physician.all
   end
