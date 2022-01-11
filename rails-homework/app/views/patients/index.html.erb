@@ -17,9 +17,11 @@
     <th>Last Name</th>
     <th>Email</th>
     <th>Age</th>
-    <% if can? :update || :destroy, @patients %>
-      <th>Actions</th>
+    <th>
+    <% if can?(:update, @patients) || can?(:destroy, @patients) %>
+      Actions
     <% end %>
+    </th>
   </tr>
   <% @patients.each do |patient| %>
     <tr>
@@ -28,12 +30,14 @@
       <td> <%= patient.last_name %> </td>
       <td> <%= patient.email %> </td>
       <td> <%= patient.age %> </td>
-      <% if can? :update || :destroy, @patients %>
-        <td>
+      <td>
+      <% if can? :update, @patients %>
           <%= link_to "Edit", edit_patient_path(patient.id), class: "btn btn-outline-primary" %>
-          <%= link_to "Delete", patient_path(patient.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
-        </td>
       <% end %>
+      <% if can? :destroy, @patients %>
+          <%= link_to "Delete", patient_path(patient.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
+      <% end %>
+      </td>
     </tr>
   <% end %>
 </table>
