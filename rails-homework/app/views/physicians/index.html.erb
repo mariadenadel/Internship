@@ -17,9 +17,11 @@
     <th>Last Name</th>
     <th>Phone Number</th>
     <th>Level</th>
-    <% if can? :update || :destroy, @physicians %>
-      <th>Actions</th>
+    <th>
+    <% if can?(:update, @physicians) || can?(:destroy, @physicians) %>
+      Actions
     <% end %>
+    </th>
   </tr>
   <% @physicians.each do |physician| %>
     <tr>
@@ -28,12 +30,14 @@
       <td> <%= physician.last_name %> </td>
       <td> <%= physician.phone_number %> </td>
       <td> <%= physician.level %> </td>
-      <% if can? :update || :destroy, @physicians %>
-        <td>
+      <td>
+      <% if can? :update, @physicians %>
           <%= link_to "Edit", edit_physician_path(physician.id), class: "btn btn-outline-primary" %>
-          <%= link_to "Delete", physician_path(physician.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
-        </td>
       <% end %>
+      <% if can? :destroy, @physicians %>
+          <%= link_to "Delete", physician_path(physician.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
+      <% end %>
+      </td>
     </tr>
   <% end %>
 </table>

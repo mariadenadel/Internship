@@ -16,10 +16,11 @@
     <th>Appointment Date</th>
     <th>Full Name of the Patient</th>
     <th>Full Name of the Physician</th>
-    <% if can? :update || :destroy, @appointments %>
-      <th>Actions</th>
+    <th>
+    <% if can?(:update, @appointments) || can?(:destroy, @appointments) %>
+      Actions
     <% end %>
-
+    </th>
   </tr>
   <% @appointments.each do |appointment| %>
     <tr>
@@ -27,12 +28,14 @@
       <td> <%= appointment.appointment_date.strftime("%d %B %Y %H:%M") %> </td>
       <td> <%= appointment.patient.full_name %> </td>
       <td> <%= appointment.physician.full_name %> </td>
-      <% if can? :update || :destroy, @appointments %>
-        <td>
+      <td>
+      <% if can? :update, @appointments %>
           <%= link_to "Edit", edit_appointment_path(appointment.id), class: "btn btn-outline-primary" %>
-          <%= link_to "Delete", appointment_path(appointment.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
-        </td>
       <% end %>
+      <% if can? :destroy, @appointments %>
+          <%= link_to "Delete", appointment_path(appointment.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
+      <% end %>
+      </td>
     </tr>
   <% end %>
 </table>
