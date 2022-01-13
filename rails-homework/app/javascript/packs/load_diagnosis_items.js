@@ -12,12 +12,12 @@ function loadDiagnisisItemsForPatient(){
           let output = ""
           if (diagnosisItems.length > 0){
             diagnosisItems.forEach(function(item, index){
-              if ($(`#patient${patientId}_${index}`).length === 0) {
-                output += `<div class="card card-body" id="patient${patientId}_${index}">${item}</div>`
-              }
+              output += `<div class="card card-body border-light" id="patient${patientId}_${index}">${item}</div>`
             })
-            $(`#patient_id${patientId}`).append(output)
+          } else {
+            output = "<div class='card card-body text-secondary'>There is no diagnosis</div>"
           }
+          $(`#patient_id${patientId}`).append(output)
         }
       )
     }
