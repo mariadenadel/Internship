@@ -13,7 +13,7 @@ function createDiagnosisItems(data, currentPatientId, patientIdInHtml) {
 
 function handler(event){
   const currentPatientId = event.target.id
-  const patientIdInHtml = $(`#patient_id${currentPatientId}`);
+  const patientIdInHtml = $(`#patient_id${currentPatientId}`)
   if (patientIdInHtml.children().length === 0) {
     $.getJSON(
       `/diagnosis_items.json?patient_id=${currentPatientId}`,
@@ -25,7 +25,7 @@ function handler(event){
 }
 
 function initializeDiagnosisItems(){
-  $(".load-diagnosis").on("click", handler);
+  $(".load-diagnosis").on("click", handler)
 }
 
 $(document).on('turbolinks:load', function(){
