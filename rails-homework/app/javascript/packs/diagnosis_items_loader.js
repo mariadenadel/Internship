@@ -1,4 +1,4 @@
-function createDiagnosisItems(data, currentPatientId, patientIdInHtml) {
+function createDiagnosisItems(data, currentPatientId, containerForDiagnosisItems) {
   const diagnosisItems = data.map((item) => item.content)
   let output = ""
   if (diagnosisItems.length > 0){
@@ -8,17 +8,17 @@ function createDiagnosisItems(data, currentPatientId, patientIdInHtml) {
   } else {
     output = "<div class='card card-body text-secondary'>There is no diagnosis</div>"
   }
-  patientIdInHtml.append(output)
+  containerForDiagnosisItems.append(output)
 }
 
 function handler(event){
   const currentPatientId = event.target.id
-  const patientIdInHtml = $(`#patient_id${currentPatientId}`)
-  if (patientIdInHtml.children().length === 0) {
+  const containerForDiagnosisItems = $(`#patient_id${currentPatientId}`)
+  if (containerForDiagnosisItems.children().length === 0) {
     $.getJSON(
       `/diagnosis_items.json?patient_id=${currentPatientId}`,
       function(data){
-        createDiagnosisItems(data, currentPatientId, patientIdInHtml)
+        createDiagnosisItems(data, currentPatientId, containerForDiagnosisItems)
       }
     )
   }
