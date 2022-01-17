@@ -37,7 +37,7 @@
         <% if can? :destroy, @patients %>
             <%= link_to "Delete", patient_path(patient.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
         <% end %>
-        <% if can? :manage, @diagnosis_items %>
+        <% if can? :read, @diagnosis_items %>
           <%= link_to "Load diagnosis items", "#patient_id#{patient.id}", data: { bs_toggle: "collapse" },
                 aria: { controls: "patient_id#{patient.id}", expanded: false }, class: "btn btn-outline-success collapsed load-diagnosis",
                 id: "#{patient.id}" %>
